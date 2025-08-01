@@ -20,21 +20,21 @@ class AttendanceManager:
         self.print_players()
         self.print_removed_players()
 
-    def define_is_removed_player(self):
-        RemoveDefiner.execute()
-
-    def define_player_grade(self):
-        GradeDefiner.execute()
-
-    def calculate_point_by_player(self):
-        PointCalculator.execute()
-
     def read_and_count_attendance_from_input_file(self):
         for line in self.attendance_input_path.read_text(encoding='utf-8').splitlines(keepends=False):
             parts = line.strip().split()
             if len(parts) == 2:
                 player = Player.get_instance(name=parts[0])
                 player.attend_by_day(parts[1])
+
+    def calculate_point_by_player(self):
+        PointCalculator.execute()
+
+    def define_player_grade(self):
+        GradeDefiner.execute()
+
+    def define_is_removed_player(self):
+        RemoveDefiner.execute()
 
     def print_players(self):
         for p in Player.player_instances_map.values():
