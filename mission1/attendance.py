@@ -29,6 +29,13 @@ def main() -> None:
     print_removed_players()
 
 
+def read_and_count_attendance_from_input_file():
+    for line in ATTENDANCE_INPUT_PATH.read_text(encoding='utf-8').splitlines(keepends=False):
+        parts = line.strip().split()
+        if len(parts) == 2:
+            add_attendance_points(player_name=parts[0], day_of_week=parts[1])
+
+
 def add_attendance_points(player_name: str, day_of_week: str) -> None:
     player_id = get_player_id(player_name)
 
@@ -53,13 +60,6 @@ def get_player_id(player_name):
         attendance_name_list[last_player_id] = player_name
 
     return player_id_map[player_name]
-
-
-def read_and_count_attendance_from_input_file():
-    for line in ATTENDANCE_INPUT_PATH.read_text(encoding='utf-8').splitlines(keepends=False):
-        parts = line.strip().split()
-        if len(parts) == 2:
-            add_attendance_points(player_name=parts[0], day_of_week=parts[1])
 
 
 def add_additional_points():
