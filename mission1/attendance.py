@@ -55,7 +55,7 @@ def get_player_id(player_name):
     return player_id_map[player_name]
 
 
-def read_and_count_attendance_from_input_file() -> bool:
+def read_and_count_attendance_from_input_file():
     for line in ATTENDANCE_INPUT_PATH.read_text(encoding='utf-8').splitlines(keepends=False):
         parts = line.strip().split()
         if len(parts) == 2:
