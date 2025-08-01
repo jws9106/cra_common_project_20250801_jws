@@ -1,0 +1,2 @@
+import mission2.src.point_calculator.point_strategy.base_point_strategy
+import mission2.src.point_calculator.point_strategy.bonus_point_strategy

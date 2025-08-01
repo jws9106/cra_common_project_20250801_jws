@@ -1,0 +1,3 @@
+import mission2.src.remove_definer.remove_policy_strategy.grade_policy
+import mission2.src.remove_definer.remove_policy_strategy.wednesday_attend_policy
+import mission2.src.remove_definer.remove_policy_strategy.weekend_attend_policy
